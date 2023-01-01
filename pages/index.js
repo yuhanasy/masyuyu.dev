@@ -1,7 +1,87 @@
 import Head from "next/head";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 
-export default function Home() {
+export default function Yuhu() {
+  const line1 = "HANAS";
+  const line2 = "YULIANTO";
+
+  return (
+    <main className="flex flex-col justify-center min-h-screen px-10">
+      <div className="flex w-full justify-center">
+        <AnimatePresence>
+          <div className="text-xl sm:text-9xl font-black relative">
+            <motion.h1 animate>MAS</motion.h1>
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { ease: "easeIn", duration: 1.5, staggerChildren: 0.4, delayChildren: 2.2 } },
+              }}
+            >
+              <motion.span>YU</motion.span>
+              {line1.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={{
+                    hidden: { display: "none" },
+                    visible: { display: "inline-block" },
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+              <motion.span
+                initial="visible"
+                animate={["fadeout", "hidden"]}
+                variants={{
+                  visible: { display: "inline-block" },
+                  fadeout: {
+                    translateX: "-100%",
+                    opacity: 0.4,
+                    transition: {
+                      delay: 1,
+                      duration: 1,
+                    },
+                  },
+                  hidden: {
+                    display: "none",
+                    transition: {
+                      delay: 2,
+                    },
+                  },
+                }}
+              >
+                YU
+              </motion.span>
+            </motion.h1>
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { display: "block", opacity: 0, translateY: "-100%" },
+                visible: {
+                  opacity: 1,
+                  translateY: "0%",
+                  transition: {
+                    ease: "easeIn",
+                    delay: 4,
+                    duration: 1.2,
+                  },
+                },
+              }}
+            >
+              {line2}
+            </motion.h1>
+          </div>
+        </AnimatePresence>
+      </div>
+    </main>
+  );
+}
+
+function Home() {
   return (
     <>
       <Head>
@@ -13,7 +93,15 @@ export default function Home() {
       <main className="flex flex-col justify-center min-h-screen px-10">
         <div className="flex flex-col gap-6">
           <h1 className="text-2xl sm:text-4xl font-black">
-            hi 👋 ...
+            hi{" "}
+            <motion.div
+              className="inline-block"
+              animate={{ opacity: 1, rotateZ: [0, 15, 0] }}
+              transition={{ duration: 1, repeat: Infinity }}
+            >
+              👋
+            </motion.div>{" "}
+            ...
             <br />
             I’m Yuhanas Yulianto
             <br />
@@ -21,12 +109,17 @@ export default function Home() {
           </h1>
 
           <div className="flex flex-wrap gap-4 items-center">
-            <div className="max-w-sm py-2 pl-6 pr-4 border border-zinc-800 rounded-full flex items-center gap-4">
+            <motion.div
+              className="max-w-sm py-2 pl-6 pr-4 border border-zinc-800 rounded-full flex items-center gap-4"
+              whileHover={{ scale: 1.2 }}
+            >
               <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-br from-violet-400 to-fuchsia-300 bg-clip-text text-transparent">
                 let&apos;s connect
               </h2>
-              <CaretCircleDoubleRightIcon size={28} />
-            </div>
+              <motion.div>
+                <CaretCircleDoubleRightIcon size={28} />
+              </motion.div>
+            </motion.div>
 
             <div className="flex text-slate-50 justify-center gap-4">
               <Link href="https://twitter.com/yuhanasyu" className="bg-zinc-900 border-t border-zinc-800 rounded-lg p-2">
