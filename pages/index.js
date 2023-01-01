@@ -8,16 +8,27 @@ export default function Yuhu() {
 
   return (
     <main className="flex flex-col justify-center min-h-screen px-10">
+      <div className="fixed inset-x-0 top-0 w-screen h-4 bg-white" />
       <div className="flex w-full justify-center">
         <AnimatePresence>
-          <div className="text-xl sm:text-9xl font-black relative">
-            <motion.h1 animate>MAS</motion.h1>
+          <motion.div className="text-7xl sm:text-8xl md:text-9xl font-black relative" animate={{}}>
+            <h1>I AM</h1>
             <motion.h1
               initial="hidden"
               animate="visible"
               variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { ease: "easeIn", duration: 1.5, staggerChildren: 0.4, delayChildren: 2.2 } },
+                hidden: { opacity: 0, x: "-100%" },
+                visible: {
+                  opacity: 1,
+                  x: `0%`,
+                  transition: {
+                    type: "spring",
+                    duration: 1.5,
+                    bounce: 0.5,
+                    staggerChildren: 0.4,
+                    delayChildren: 3,
+                  },
+                },
               }}
             >
               <motion.span>YU</motion.span>
@@ -34,21 +45,18 @@ export default function Yuhu() {
               ))}
               <motion.span
                 initial="visible"
-                animate={["fadeout", "hidden"]}
+                animate="fadeout"
                 variants={{
                   visible: { display: "inline-block" },
                   fadeout: {
-                    translateX: "-100%",
+                    x: "-100%",
                     opacity: 0.4,
                     transition: {
-                      delay: 1,
+                      delay: 2,
                       duration: 1,
                     },
-                  },
-                  hidden: {
-                    display: "none",
-                    transition: {
-                      delay: 2,
+                    transitionEnd: {
+                      display: "none",
                     },
                   },
                 }}
@@ -60,21 +68,23 @@ export default function Yuhu() {
               initial="hidden"
               animate="visible"
               variants={{
-                hidden: { display: "block", opacity: 0, translateY: "-100%" },
+                hidden: { display: "block", opacity: 0, y: "-100%" },
                 visible: {
                   opacity: 1,
-                  translateY: "0%",
-                  transition: {
-                    ease: "easeIn",
-                    delay: 4,
-                    duration: 1.2,
-                  },
+                  y: "0%",
                 },
+              }}
+              transition={{
+                type: "spring",
+                delay: 4.8,
+                stiffness: 150,
+                mass: 1,
+                damping: 13,
               }}
             >
               {line2}
             </motion.h1>
-          </div>
+          </motion.div>
         </AnimatePresence>
       </div>
     </main>
