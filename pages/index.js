@@ -66,9 +66,9 @@ const TwitterIcon = ({ size = 24, width, height, color = "currentColor" }) => {
         d="M128,88c0-22,18.5-40.3,40.5-40a40,40,0,0,1,36.2,24H240l-32.3,32.3A127.9,127.9,0,0,1,80,224c-32,0-40-12-40-12s32-12,48-36c0,0-64-32-48-120,0,0,40,40,88,48Z"
         fill="none"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="24"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="24"
       ></path>
     </svg>
   );
@@ -86,9 +86,9 @@ const LinkedinIcon = ({ size = 24, width, height, color = "currentColor" }) => {
         rx="8"
         fill="none"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="24"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="24"
       ></rect>
       <line
         x1="124"
@@ -97,9 +97,9 @@ const LinkedinIcon = ({ size = 24, width, height, color = "currentColor" }) => {
         y2="176"
         fill="none"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="24"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="24"
       ></line>
       <line
         x1="84"
@@ -108,17 +108,17 @@ const LinkedinIcon = ({ size = 24, width, height, color = "currentColor" }) => {
         y2="176"
         fill="none"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="24"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="24"
       ></line>
       <path
         d="M124,148a28,28,0,0,1,56,0v28"
         fill="none"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="24"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="24"
       ></path>
       <circle cx="84" cy="80" r="16"></circle>
     </svg>
