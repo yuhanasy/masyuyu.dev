@@ -2,16 +2,26 @@ import Head from "next/head";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function Yuhu() {
+export default function Hero() {
   const line1 = "HANAS";
   const line2 = "YULIANTO";
 
   return (
-    <main className="flex flex-col justify-center min-h-screen px-10">
+    <main className="relative flex flex-col justify-center min-h-screen px-10">
       <div className="fixed inset-x-0 top-0 w-screen h-4 bg-white" />
-      <div className="flex w-full justify-center">
+      <div className="relative m-auto">
         <AnimatePresence>
-          <motion.div className="text-7xl sm:text-8xl md:text-9xl font-black relative" animate={{}}>
+          <motion.div
+            className="text-7xl sm:text-8xl md:text-9xl font-black relative"
+            animate={{
+              scale: 0.9,
+              translateY: -40,
+              transition: {
+                ease: "linear",
+                delay: 6,
+              },
+            }}
+          >
             <h1>I AM</h1>
             <motion.h1
               initial="hidden"
@@ -26,7 +36,7 @@ export default function Yuhu() {
                     duration: 1.5,
                     bounce: 0.5,
                     staggerChildren: 0.4,
-                    delayChildren: 3,
+                    delayChildren: 3.2,
                   },
                 },
               }}
@@ -76,16 +86,79 @@ export default function Yuhu() {
               }}
               transition={{
                 type: "spring",
-                delay: 4.8,
+                delay: 5,
                 stiffness: 150,
                 mass: 1,
                 damping: 13,
               }}
+              whileHover={{
+                scale: [null, 1.2, 1.1],
+              }}
             >
               {line2}
             </motion.h1>
+            <motion.p
+              className="text-center text-sm sm:text-2xl font-bold"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  y: "50",
+                  opacity: 0,
+                },
+                visible: {
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    ease: "anticipate",
+                    delay: 6,
+                    duration: 1,
+                  },
+                },
+              }}
+            >
+              [ A WEB DEVELOPER BASED IN INDONESIA ]
+            </motion.p>
           </motion.div>
         </AnimatePresence>
+      </div>
+
+      <div className="absolute bottom-0 inset-x-0 flex flex-col justify-center items-center text-white">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              y: 10,
+              transition: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 0.75,
+              },
+            },
+          }}
+        >
+          <CaretDownIcon size={30} />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                repeat: Infinity,
+                duration: 0.4,
+                repeatType: "mirror",
+              },
+            },
+          }}
+        >
+          <CaretDoubleDownIcon size={30} />
+        </motion.div>
       </div>
     </main>
   );
@@ -151,6 +224,46 @@ function Home() {
     </>
   );
 }
+
+const CaretDownIcon = ({ size = 24, width, height, color = "currentColor" }) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width ?? size} height={height ?? size} fill={color} viewBox="0 0 256 256">
+      <rect width="256" height="256" fill="none"></rect>
+      <polyline
+        points="208 96 128 176 48 96"
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      ></polyline>
+    </svg>
+  );
+};
+
+const CaretDoubleDownIcon = ({ size = 24, width, height, color = "currentColor" }) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width ?? size} height={height ?? size} fill={color} viewBox="0 0 256 256">
+      <rect width="256" height="256" fill="none"></rect>
+      <polyline
+        points="208 128 128 208 48 128"
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      ></polyline>
+      <polyline
+        points="208 48 128 128 48 48"
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      ></polyline>
+    </svg>
+  );
+};
 
 const CaretCircleDoubleRightIcon = ({ size = 24, width, height, color = "currentColor" }) => {
   return (
