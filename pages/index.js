@@ -120,45 +120,41 @@ export default function Hero() {
               [ A WEB DEVELOPER BASED IN INDONESIA ]
             </motion.p>
           </motion.div>
-        </AnimatePresence>
-      </div>
+          <motion.div
+            className="flex text-slate-50 justify-center gap-4"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                opacity: 0,
+              },
+              visible: {
+                opacity: 1,
+                transition: {
+                  ease: "anticipate",
+                  delay: 6,
+                  duration: 1,
+                  staggerChildren: 0.6,
+                },
+              },
+            }}
+          >
+            <Link href="https://twitter.com/yuhanasyu" className="bg-zinc-900 border-t border-zinc-800 rounded-lg p-2">
+              <TwitterIcon size={28} />
+            </Link>
 
-      <div className="absolute bottom-0 inset-x-0 flex flex-col justify-center items-center text-white">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              y: 10,
-              transition: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 0.75,
-              },
-            },
-          }}
-        >
-          <CaretDownIcon size={30} />
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                repeat: Infinity,
-                duration: 0.4,
-                repeatType: "mirror",
-              },
-            },
-          }}
-        >
-          <CaretDoubleDownIcon size={30} />
-        </motion.div>
+            <Link
+              href="https://www.linkedin.com/in/yuhanas-yulianto-28474612a"
+              className="bg-zinc-900 border-t border-zinc-800 rounded-lg p-2"
+            >
+              <LinkedinIcon size={28} />
+            </Link>
+
+            <Link href="https://github.com/yuhanasy" className="bg-zinc-900 border-t border-zinc-800 rounded-lg p-2">
+              <GithubIcon size={28} />
+            </Link>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </main>
   );
