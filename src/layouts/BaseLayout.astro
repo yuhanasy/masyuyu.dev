@@ -1,18 +1,23 @@
 ---
 import "@fontsource-variable/montserrat";
+import "@fontsource/oxygen-mono";
+import Header from "../components/Header.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>Yuhanas Yulianto</title>
     <meta name="author" content="Yuhanas Yulianto" />
     <meta name="description" content="I am Yuhanas Yulianto, a frontend engineer. Build app with react ecosystem." />
   </head>
-  <body class="bg-stone-950 text-stone-400">
-    <slot />
+  <body class="bg-zinc-950 text-zinc-400">
+    <div class="mx-4 sm:mx-10 border-x border-white/10 min-h-screen">
+      <Header />
+      <slot />
+    </div>
   </body>
 </html>
