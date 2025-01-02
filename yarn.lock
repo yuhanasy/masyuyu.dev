@@ -428,6 +428,16 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.24.2.tgz#34aa0b52d0fbb1a654b596acfa595f0c7b77a77b"
   integrity sha512-7VTgWzgMGvup6aSqDPLiW5zHaxYJGTO4OokMjIlrCtf+VpEL+cXKtCvg723iguPYI5oaUNdS+/V7OU2gvXVWEg==
 
+"@fontsource-variable/montserrat@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/montserrat/-/montserrat-5.1.1.tgz#908185f4b17afeec8532301ed0991989dd341506"
+  integrity sha512-eHmSruS3B+4wVaHk6ShNUJj1MbWEohOuriwN/oYR2VY8jRS83a5SKQeG1wu4Eku3v3f5cXTIbfd1tHeQ7GXkiA==
+
+"@fontsource/oxygen-mono@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/oxygen-mono/-/oxygen-mono-5.1.1.tgz#2a77c269e46121d1fbde6780d934d45f90dd9fa6"
+  integrity sha512-h5W+kPLP0EZNkIH8+9w75I4+9HwETj+nlXAtB1osQVYOtVO0zSMVQ+7kBTNG9hVosqJ/+evd2KmD/OchmBXCVA==
+
 "@img/sharp-darwin-arm64@0.33.4":
   version "0.33.4"
   resolved "https://registry.yarnpkg.com/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.33.4.tgz#a1cf4a7febece334f16e0328b9689f05797d7aec"
